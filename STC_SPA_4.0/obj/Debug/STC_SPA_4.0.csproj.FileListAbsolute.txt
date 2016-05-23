@@ -1,0 +1,8 @@
+c:\users\muhammad\documents\visual studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\bin\STC_SPA_4.0.dll
+c:\users\muhammad\documents\visual studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\bin\STC_SPA_4.0.pdb
+c:\users\muhammad\documents\visual studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\bin\BouncyCastle.Crypto.dll
+c:\users\muhammad\documents\visual studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\bin\Newtonsoft.Json.dll
+c:\users\muhammad\documents\visual studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\bin\Newtonsoft.Json.xml
+c:\users\muhammad\documents\visual studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\obj\Debug\STC_SPA_4.0.csprojResolveAssemblyReference.cache
+c:\users\muhammad\documents\visual studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\obj\Debug\STC_SPA_4.0.dll
+c:\users\muhammad\documents\visual studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\obj\Debug\STC_SPA_4.0.pdb

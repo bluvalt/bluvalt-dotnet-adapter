@@ -1,0 +1,15 @@
+C:\Users\Muhammad\Documents\Visual Studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\bin\STCS_SPA_4.0.dll
+C:\Users\Muhammad\Documents\Visual Studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\bin\STCS_SPA_4.0.pdb
+C:\Users\Muhammad\Documents\Visual Studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\bin\BouncyCastle.Crypto.dll
+C:\Users\Muhammad\Documents\Visual Studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\bin\Newtonsoft.Json.dll
+C:\Users\Muhammad\Documents\Visual Studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\bin\Newtonsoft.Json.xml
+C:\Users\Muhammad\Documents\Visual Studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.csprojResolveAssemblyReference.cache
+C:\Users\Muhammad\Documents\Visual Studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.dll
+C:\Users\Muhammad\Documents\Visual Studio 2010\Projects\STC_SPA_4.0\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.pdb
+C:\opt\dotnet40\STC_SPA_4.0\bin\STCS_SPA_4.0.dll.config
+C:\opt\dotnet40\STC_SPA_4.0\bin\STCS_SPA_4.0.dll
+C:\opt\dotnet40\STC_SPA_4.0\bin\STCS_SPA_4.0.pdb
+C:\opt\dotnet40\STC_SPA_4.0\bin\STCS_SPA_4.0.dll.CodeAnalysisLog.xml
+C:\opt\dotnet40\STC_SPA_4.0\bin\STCS_SPA_4.0.dll.lastcodeanalysissucceeded
+C:\opt\dotnet40\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.dll
+C:\opt\dotnet40\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.pdb

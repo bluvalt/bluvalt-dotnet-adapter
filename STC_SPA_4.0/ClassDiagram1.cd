@@ -1,0 +1,151 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="com.stcs.spa.vo.Unit">
+    <Position X="12.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAKAgAAAAIAAAAAAAAAAAQAAAAEAAAAAAAAAAAACgA=</HashCode>
+      <FileName>Models\Unit.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.AccessToken">
+    <Position X="8.25" Y="9.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAgAAAACAAAAAgAAAAAAAAAAAAAADAABAAQAA=</HashCode>
+      <FileName>Models\AccessToken.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.Addon">
+    <Position X="10.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADgAAAAQAgEAAAIBAAAAQEBgAEAAbAAAAAwAAAAoA=</HashCode>
+      <FileName>Models\Addon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.AddonSubscription">
+    <Position X="17" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQjgAAEQaAAAEAgAABAAAAIRAAAAAQAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\AddonSubscription.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.BaseVO">
+    <Position X="13.25" Y="10" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\BaseVO.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.Bundle">
+    <Position X="17" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADgAgAAQAoEAAAIBAAAAQABAAEAAQAAAAAAAAAAoA=</HashCode>
+      <FileName>Models\Bundle.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.Customer">
+    <Position X="3" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAgAAAAIQAEAAAAAAQAAAAEAAAgAAAAIAAAAgA=</HashCode>
+      <FileName>Models\Customer.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.Event">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAACECAAAAAAAAAAAAAAAAAAAAABABAAAQAQAAAAAhA=</HashCode>
+      <FileName>Models\Event.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.EventData">
+    <Position X="3" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\EventData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.EventResponse">
+    <Position X="5" Y="7" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACQAAAAkAAAAIAAEAAAAAAAAAAABAAAAAQAAIAAgACA=</HashCode>
+      <FileName>Models\EventResponse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.ExtraFields">
+    <Position X="5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Models\ExtraFields.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.Feature">
+    <Position X="12.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgAAAAAAgEAAAIBAAAAQABAAEAAQAAAAAAAAAAoA=</HashCode>
+      <FileName>Models\Feature.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.Item">
+    <Position X="19.25" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACgAAAAAAgEAAAIBAAAAQABAAUAAQAEAAAAAAAAoA=</HashCode>
+      <FileName>Models\Item.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.Plan">
+    <Position X="21.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAADiAAAAQAgEAEAIBABAAQABAAEAAQAAAAAAIAAAog=</HashCode>
+      <FileName>Models\Plan.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.PlanItem">
+    <Position X="8.25" Y="6.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAgAAAAIAAAAAQEAAAAAACAAAAAgAAAAgA=</HashCode>
+      <FileName>Models\PlanItem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.Price">
+    <Position X="8" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAEAAAABAIAACADAABgAUAAQAAAgAAAgI=</HashCode>
+      <FileName>Models\Price.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.Service">
+    <Position X="14.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQGgAgEAAAoGAAAIBgAEAQABBAMIAQACCAAAAAABoA=</HashCode>
+      <FileName>Models\Service.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.SubscriptionAddedCancelledData">
+    <Position X="3" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AA0jAAAFQSAAAEAgACAAAAAoBAEAAAQBACAAAAAoAgA=</HashCode>
+      <FileName>Models\SubscriptionAddedCancelledData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.SubscriptionAddonAttachedCancelled">
+    <Position X="5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQjgAAEQaAAAEAgAABAAAAIRAAAAAQAAAAAAAAAAgA=</HashCode>
+      <FileName>Models\SubscriptionAddonAttachedCancelled.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="com.stcs.spa.vo.SubscriptionUserAddedRemovedData">
+    <Position X="1" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADgAAAAIAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAwA=</HashCode>
+      <FileName>Models\SubscriptionUserAddedRemovedData.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="com.stcs.spa.vo.EventType">
+    <Position X="1" Y="7.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAAEAAAgAAIAAAAAAgEAAAAAAABAAAEAAAAAAAEA=</HashCode>
+      <FileName>Models\EventType.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
