@@ -1,11 +1,14 @@
 # bluvalt-dotnet-adapter
 A C# implementation of Bluvalt Delivery Platform Standard to use as starting point for services integration
 
+# bluvalt-dotnet-adapter
+A C# implementation of Bluvalt Delivery Platform Standard to use as starting point for services integration
+
 # Integrate a .NET application with Bluvalt
 
 The application have two parts 
 ### Authentication 
-Provides Open ID Connect SSO for User Id against Bluvalt Connect. This Application shows how to build a .Net MVC web application that uses OpenID Connect to sign-in users , using the ASP.Net OpenID Connect OWIN middleware.
+Provides Open ID Connect SSO for User Id against Bluvalt Connect. Bluvalt_SPA 4.0 is using ServiceModel (Rest API) for Event Listener and used WEB API (HttpWebRequest,HttpWebResponse) for Open Id Connect Authentication.
 ### Bluvalt Event Listener 
 Event handler that listens and understands events coming from Bluvalt. The handler will create c# classes based on Event type and made it available in the application for further processing.
 
