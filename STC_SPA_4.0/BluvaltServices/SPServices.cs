@@ -10,9 +10,9 @@ namespace STCS_SPA2.Services
 {
     public interface SPServices
     {
-         void handleEvent(string EventStr);
-         bool? validateUser(long? userId);
+         void handleEvent(string EventStr);        
          void processEvent(object data);
+         bool? validateUser(long? userId);
     }
 
    

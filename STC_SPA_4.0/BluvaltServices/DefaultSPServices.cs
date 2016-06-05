@@ -30,22 +30,22 @@ namespace STCS_SPA2.Services
                 switch (eventType)
                 {
                     case EventType.SUBSCRIPTION_CREATED:
-                        eventData = eventDataObj.ToObject<SubscriptionAddedCancelledData>();
+                        eventData = eventDataObj.ToObject<SubscriptionData>();
                         break;
                     case EventType.SUBSCRIPTION_CANCELED:
-                        eventData = eventDataObj.ToObject<SubscriptionAddedCancelledData>();
+                        eventData = eventDataObj.ToObject<SubscriptionData>();
                         break;
                     case EventType.SUBSCRIPTION_ADDON_ATTACHED:
-                        eventData = eventDataObj.ToObject<SubscriptionAddonAttachedCancelled>();
+                        eventData = eventDataObj.ToObject<SubscriptionData>();
                         break;
                     case EventType.SUBSCRIPTION_ADDON_CANCELED:
-                        eventData = eventDataObj.ToObject<SubscriptionAddonAttachedCancelled>();
+                        eventData = eventDataObj.ToObject<SubscriptionData>();
                         break;
                     case EventType.SUBSCRIPTION_USER_ADDED:
-                        eventData = eventDataObj.ToObject<SubscriptionUserAddedRemovedData>();
+                        eventData = eventDataObj.ToObject<SubscriptionUserData>();
                         break;
                     case EventType.SUBSCRIPTION_USER_REMOVED:
-                        eventData = eventDataObj.ToObject<SubscriptionUserAddedRemovedData>();
+                        eventData = eventDataObj.ToObject<SubscriptionUserData>();
                         break;
                     case EventType.SUBSCRIPTION_DOWNGRADED:
                         break;

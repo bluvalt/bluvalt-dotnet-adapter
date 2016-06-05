@@ -12,7 +12,7 @@ namespace Authentication
     {
 
         
-        public static string BasePath = ConfigurationManager.AppSettings["ida:Authority"];
+        public static string BasePath = ConfigurationManager.AppSettings["blvt:Authority"];
 
         public static string AuthPath = Config.BasePath + "/authorize";
 
@@ -20,11 +20,11 @@ namespace Authentication
 
         public static string UserInfoPath = Config.BasePath + "/userinfo";
 
-        public static string ClientName = ConfigurationManager.AppSettings["ida:ClientId"];
+        public static string ClientName = ConfigurationManager.AppSettings["blvt:ClientId"];
 
-        public static string CallbackUrl = ConfigurationManager.AppSettings["ida:RedirectUrl"];
+        public static string CallbackUrl = ConfigurationManager.AppSettings["blvt:RedirectUrl"];
 
-        public static string Credentials = ConfigurationManager.AppSettings["ida:ClientSecret"];
+        public static string Credentials = ConfigurationManager.AppSettings["blvt:ClientSecret"];
 
        
     }

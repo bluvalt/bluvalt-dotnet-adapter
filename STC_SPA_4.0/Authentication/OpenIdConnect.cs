@@ -48,7 +48,7 @@ namespace Authentication
             list.Add(new KeyValuePair<string, string>("redirect_uri", Config.CallbackUrl));
             list.Add(new KeyValuePair<string, string>("grant_type", "authorization_code"));
             list.Add(new KeyValuePair<string, string>("code", code));
-            Dictionary<string, string> dictionary = Request.Post(Config.TokenPath, list);
+            Dictionary<string, string> dictionary = HttpRequestHelper.Post(Config.TokenPath, list);
             if (dictionary != null && dictionary.ContainsKey("error"))
             {
                 this.errorInfo = dictionary;
@@ -69,7 +69,7 @@ namespace Authentication
                 string value = this.accessToken["access_token"];
                 List<KeyValuePair<string, string>> list = new List<KeyValuePair<string, string>>();
                 list.Add(new KeyValuePair<string, string>("access_token", value));
-                Dictionary<string, string> dictionary = Request.Get(Config.UserInfoPath, list);
+                Dictionary<string, string> dictionary = HttpRequestHelper.Get(Config.UserInfoPath, list);
                 if (dictionary != null && dictionary.ContainsKey("error"))
                 {
                     this.errorInfo = dictionary;

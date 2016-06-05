@@ -8,29 +8,26 @@ namespace com.stcs.spa.vo
 
 
 
-	public class SubscriptionAddedCancelledData : EventData
+	public class SubscriptionData : EventData
 	{
 
-		private long? id;
-		private string status, cancel_reason;
-		private DateTime start, canceled_at, created;
+		private long? id, base_subscription, override_price, items_price;
+		private string status, cancel_reason, name;
+		private DateTime start, canceled_at, created, end_date;
 		private Customer customer;
 		private Price price;
 		private Plan plan;
-		private long?[] admin_users;
-		private string[] admin_users_usernames;
 		private IDictionary<string, IDictionary<string, string>> extra_fields;
+
 		/// <returns> the id </returns>
-		public virtual long Id
+		public virtual long getId()
 		{
-			get
-			{
-				return id.Value;
-			}
-			set
-			{
-				this.id = value;
-			}
+			return id.Value;
+		}
+		/// <param name="id"> the id to set </param>
+		public virtual void setId(long id)
+		{
+			this.id = id;
 		}
 		/// 
 		/// <summary>
@@ -131,30 +128,7 @@ namespace com.stcs.spa.vo
 				this.plan = value;
 			}
 		}
-		/// <returns> the admin_users </returns>
-		public virtual long?[] Admin_users
-		{
-			get
-			{
-				return admin_users;
-			}
-			set
-			{
-				this.admin_users = value;
-			}
-		}
-		/// <returns> the admin_users_usernames </returns>
-		public virtual string[] Admin_users_usernames
-		{
-			get
-			{
-				return admin_users_usernames;
-			}
-			set
-			{
-				this.admin_users_usernames = value;
-			}
-		}
+
 		/// <returns> the extra_fields </returns>
 		public virtual IDictionary<string, IDictionary<string, string>> Extra_fields
 		{
@@ -169,8 +143,76 @@ namespace com.stcs.spa.vo
 		}
 
 
+		public virtual string Name
+		{
+			get
+			{
+				return name;
+			}
+			set
+			{
+				this.name = value;
+			}
+		}
 
 
+
+
+		public virtual DateTime End_date
+		{
+			get
+			{
+				return end_date;
+			}
+			set
+			{
+				this.end_date = value;
+			}
+		}
+
+
+		public virtual long? Items_price
+		{
+			get
+			{
+				return items_price;
+			}
+			set
+			{
+				this.items_price = value;
+			}
+		}
+
+
+		public virtual long? Override_price
+		{
+			get
+			{
+				return override_price;
+			}
+			set
+			{
+				this.override_price = value;
+			}
+		}
+
+
+		public virtual void setId(long? id)
+		{
+			this.id = id;
+		}
+
+		public virtual long? Base_subscription
+		{
+			get
+			{
+				return base_subscription;
+			}
+			set
+			{
+				this.base_subscription = value;
+			}
+		}
 
 	}
 

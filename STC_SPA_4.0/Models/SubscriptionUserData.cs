@@ -3,7 +3,7 @@
 
 
 
-	public class SubscriptionUserAddedRemovedData : EventData
+	public class SubscriptionUserData : EventData
 	{
 
 		private long? id, subscription, user;

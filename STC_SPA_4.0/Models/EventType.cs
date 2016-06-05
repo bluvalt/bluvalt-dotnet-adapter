@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
 namespace com.stcs.spa.vo
 {
-
-	
-
 	public enum EventType
 	{
         [JsonProperty("subscription.created")]
@@ -23,10 +20,15 @@ namespace com.stcs.spa.vo
         [JsonProperty("subscription.user.removed")]
         SUBSCRIPTION_USER_REMOVED,
         [JsonProperty("webhook.test")]
-        WEBHOOK_TEST
-
-
-
+        WEBHOOK_TEST,
+		[JsonProperty("account.suspended")]
+		ACCOUNT_SUSPENDED,
+        [JsonProperty("account.resumed")]
+		ACCOUNT_RESUMED,
+        [JsonProperty("account.terminated")]
+		ACCOUNT_TERMINATED,
+        [JsonProperty("event.expired")]
+		EVENT_EXPIRED
 	}
 
 }

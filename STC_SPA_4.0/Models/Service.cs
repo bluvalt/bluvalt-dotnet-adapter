@@ -3,7 +3,7 @@
 namespace com.stcs.spa.vo
 {
 
-	public class Service : BaseVO
+	public class Service : Base
 	{
 
 		private int id;
@@ -13,7 +13,7 @@ namespace com.stcs.spa.vo
 		private Feature[] featurs;
 		private Plan[] plans;
 		private Bundle[] bundles;
-		private Addon[] add_ons;
+		
 		/// <returns> the id </returns>
 		public virtual int Id
 		{
@@ -158,18 +158,7 @@ namespace com.stcs.spa.vo
 				this.bundles = value;
 			}
 		}
-		/// <returns> the add_ons </returns>
-		public virtual Addon[] Add_ons
-		{
-			get
-			{
-				return add_ons;
-			}
-			set
-			{
-				this.add_ons = value;
-			}
-		}
+		
 
 
 	}

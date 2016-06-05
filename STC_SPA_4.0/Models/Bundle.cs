@@ -3,7 +3,7 @@
 namespace com.stcs.spa.vo
 {
 
-	public class Bundle : BaseVO
+	public class Bundle : Base
 	{
 
 		private int id, price;

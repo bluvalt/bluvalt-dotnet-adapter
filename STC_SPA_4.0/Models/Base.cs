@@ -1,7 +1,7 @@
 ﻿namespace com.stcs.spa.vo
 {
 
-	public class BaseVO
+	public class Base
 	{
 
 	}

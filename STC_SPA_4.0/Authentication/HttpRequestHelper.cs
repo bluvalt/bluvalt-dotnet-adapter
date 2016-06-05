@@ -8,7 +8,7 @@ using System.Web;
 
 namespace Authentication
 {
-    internal class Request
+    internal class HttpRequestHelper
     {
         internal static Dictionary<string, string> Post(string url, List<KeyValuePair<string, string>> queryParams)
         {
@@ -55,11 +55,11 @@ namespace Authentication
                         return result;
                     }
                 }
-                result = Request.HttpRequestErrorByMessage(ex.Message);
+                result = HttpRequestHelper.HttpRequestErrorByMessage(ex.Message);
             }
             catch (Exception ex2)
             {
-                result = Request.HttpRequestErrorByMessage(ex2.Message);
+                result = HttpRequestHelper.HttpRequestErrorByMessage(ex2.Message);
             }
             return result;
         }
@@ -103,11 +103,11 @@ namespace Authentication
                         return result;
                     }
                 }
-                result = Request.HttpRequestErrorByMessage(ex.Message);
+                result = HttpRequestHelper.HttpRequestErrorByMessage(ex.Message);
             }
             catch (Exception ex2)
             {
-                result = Request.HttpRequestErrorByMessage(ex2.Message);
+                result = HttpRequestHelper.HttpRequestErrorByMessage(ex2.Message);
             }
             return result;
         }
