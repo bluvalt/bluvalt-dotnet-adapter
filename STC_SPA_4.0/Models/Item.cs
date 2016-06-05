@@ -3,7 +3,7 @@
 namespace com.stcs.spa.vo
 {
 
-	public class Item : BaseVO
+	public class Item : Base
 	{
 
 		private int id;

@@ -27,10 +27,10 @@ namespace Services
             string res = reader.ReadToEnd();
            
             System.ServiceModel.Web.WebOperationContext ctx = System.ServiceModel.Web.WebOperationContext.Current;
-            String XCartwheelSignature = ctx.IncomingRequest.Headers["X-Bluvalt-Signature"].ToString();
+            String XBluvaltSignature = ctx.IncomingRequest.Headers["X-Bluvalt-Signature"].ToString();
             reader.Close();
             reader.Dispose();
-            if (XCartwheelSignature != null)
+            if (XBluvaltSignature != null)
             {
                 try
                 {

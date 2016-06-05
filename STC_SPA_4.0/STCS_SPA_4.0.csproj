@@ -85,19 +85,18 @@
   <ItemGroup>
     <Compile Include="Authentication\Config.cs" />
     <Compile Include="Authentication\OpenIdConnect.cs" />
-    <Compile Include="Authentication\Request.cs" />
+    <Compile Include="Authentication\HttpRequestHelper.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccessToken.cs" />
-    <Compile Include="Models\Addon.cs" />
-    <Compile Include="Models\AddonSubscription.cs" />
-    <Compile Include="Models\BaseVO.cs" />
+    <Compile Include="Models\Base.cs" />
     <Compile Include="Models\Bundle.cs" />
     <Compile Include="Models\Customer.cs" />
     <Compile Include="Models\Event.cs" />
     <Compile Include="Models\EventData.cs" />
     <Compile Include="Models\EventResponse.cs" />
+    <Compile Include="Models\EventService.cs" />
     <Compile Include="Models\EventType.cs" />
     <Compile Include="Models\ExtraFields.cs" />
     <Compile Include="Models\Feature.cs" />
@@ -105,10 +104,12 @@
     <Compile Include="Models\Plan.cs" />
     <Compile Include="Models\PlanItem.cs" />
     <Compile Include="Models\Price.cs" />
+    <Compile Include="Models\QuantifiableItem.cs" />
+    <Compile Include="Models\QuantifiableItemPrice.cs" />
     <Compile Include="Models\Service.cs" />
-    <Compile Include="Models\SubscriptionAddedCancelledData.cs" />
-    <Compile Include="Models\SubscriptionAddonAttachedCancelled.cs" />
-    <Compile Include="Models\SubscriptionUserAddedRemovedData.cs" />
+    <Compile Include="Models\SubscriptionData.cs" />
+    <Compile Include="Models\SubscriptionQuantifiableItemPrice.cs" />
+    <Compile Include="Models\SubscriptionUserData.cs" />
     <Compile Include="Models\Unit.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="BluvaltServices\DefaultSPServices.cs" />

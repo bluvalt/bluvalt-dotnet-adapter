@@ -13,3 +13,8 @@ C:\opt\dotnet40\STC_SPA_4.0\bin\STCS_SPA_4.0.dll.CodeAnalysisLog.xml
 C:\opt\dotnet40\STC_SPA_4.0\bin\STCS_SPA_4.0.dll.lastcodeanalysissucceeded
 C:\opt\dotnet40\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.dll
 C:\opt\dotnet40\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.pdb
+C:\opt\dotnetGitHub\STC_SPA_4.0\bin\STCS_SPA_4.0.dll.config
+C:\opt\dotnetGitHub\STC_SPA_4.0\bin\STCS_SPA_4.0.dll
+C:\opt\dotnetGitHub\STC_SPA_4.0\bin\STCS_SPA_4.0.pdb
+C:\opt\dotnetGitHub\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.dll
+C:\opt\dotnetGitHub\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.pdb

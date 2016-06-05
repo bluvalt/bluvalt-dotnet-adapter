@@ -27,10 +27,10 @@ To get started developers are expecting to have experience with the following te
 
 1. Open the solution in Visual Studio 2015.
 2. Open the `web.config` file.
-3. Find the app key `ida:Authority` and replace the value https://dev-sso.stcs.com.sa/connect. 
-4. Find the app key `ida:ClientId` and replace the value with the Client ID from Bluvalt.
-4. Find the app key `ida:ClientSecret` and replace the value with the Client Secret from Bluvalt.
-5. Find the app key `ida:RedirectUrl" and replace the value with the new base URL of the running applcation e.g https://localhost:44320.
+3. Find the app key `blvt:Authority` and replace the value https://dev-sso.stcs.com.sa/connect. 
+4. Find the app key `blvt:ClientId` and replace the value with the Client ID from Bluvalt.
+4. Find the app key `blvt:ClientSecret` and replace the value with the Client Secret from Bluvalt.
+5. Find the app key `blvt:RedirectUrl" and replace the value with the new base URL of the running applcation e.g https://localhost:44320.
 
 ### Step 5:  Run the Application
 
