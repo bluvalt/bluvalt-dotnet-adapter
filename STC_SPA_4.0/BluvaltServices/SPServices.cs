@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,7 +11,7 @@ namespace STCS_SPA2.Services
     public interface SPServices
     {
          void handleEvent(string EventStr);        
-         void processEvent(object data);
+         void processEvent(params string[] args);
          bool? validateUser(long? userId);
     }
 
