@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Web;
@@ -26,7 +26,9 @@ namespace Authentication
 
         public static string Credentials = ConfigurationManager.AppSettings["blvt:ClientSecret"];
 
-       
+        public static string EventReponseURL = ConfigurationManager.AppSettings["blvt:EventReponseURL"];
+
+
     }
     public enum ErrorCode
     {
