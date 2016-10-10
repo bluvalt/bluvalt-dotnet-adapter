@@ -1,10 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using STCS_SPA2.Services;
 using com.stcs.spa.vo;
 using Newtonsoft.Json.Linq;
 using System.IO;
 using Newtonsoft.Json;
+using System.Configuration;
+using System.Net;
 
 namespace STCS_SPA2.Services
 {
@@ -31,6 +33,8 @@ namespace STCS_SPA2.Services
                 {
                     case EventType.SUBSCRIPTION_CREATED:
                         eventData = eventDataObj.ToObject<SubscriptionData>();
+                        // add your code here specific to your server and then reply back 
+                        processEvent(eventObj.Id, "success", "done", "ref_number");
                         break;
                     case EventType.SUBSCRIPTION_CANCELED:
                         eventData = eventDataObj.ToObject<SubscriptionData>();
@@ -52,6 +56,7 @@ namespace STCS_SPA2.Services
                     case EventType.SUBSCRIPTION_UPGRADED:
                         break;
                     case EventType.WEBHOOK_TEST:
+                        processEvent(eventObj.Id,"success","done", "ref_number");
                         break;
 
 
@@ -61,14 +66,24 @@ namespace STCS_SPA2.Services
 
             } catch(Exception ex) 
             {
-                System.Diagnostics.Debug.WriteLine(ex.Message);
+                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
                 throw new Exception("Error while understanding Event Json.");
             }
             }
 
-        public void processEvent(object data)
+        public void processEvent(params string[] args)
         {
-            throw new NotImplementedException();
+            String event_id = (String)args[0];
+            String status = (String)args[1];
+            String message = (String)args[2];
+            String ref_number = (String)args[3];
+            if(sendEventReponse( event_id,  status,  message, ref_number))
+            {
+                System.Diagnostics.Debug.WriteLine("Responded successfully to event:" + event_id);
+            } else
+            {
+                System.Diagnostics.Debug.WriteLine("Failed to respond to event:" + event_id);
+            }
         }
 
         public bool? validateUser(long? userId)
@@ -124,8 +139,39 @@ namespace STCS_SPA2.Services
             }
         }
 
-    }
 
+        public static Boolean sendEventReponse(string event_id, string status, string message, string ref_number)
+        {
+
+
+
+            List<KeyValuePair<string, string>> list = new List<KeyValuePair<string, string>>();
+            list.Add(new KeyValuePair<string, string>("client_id", Authentication.Config.ClientName));
+            list.Add(new KeyValuePair<string, string>("client_secret", Authentication.Config.Credentials));
+            list.Add(new KeyValuePair<string, string>("grant_type", "client_credentials"));
+            var returnData = Authentication.HttpRequestHelper.Post(Authentication.Config.TokenPath, list);
+
+            EventResponse eventresp = new EventResponse();
+            eventresp.Status = status;
+            eventresp.Message = message;
+            eventresp.Ref_number = ref_number;
+            string URL = (Authentication.Config.EventReponseURL + event_id + "/");
+            string Token = returnData["access_token"].ToString();
+
+
+            string json = "{\"status\":\"" + status + "\",\"message\":\"" + message + "\",\"ref_number\":\"" + ref_number + "\"}";
+
+            return Authentication.HttpRequestHelper.PUT(URL, json, Token);
+
+
+
+
+        }
+      
+
+
+       
+    }
 
 
 }
