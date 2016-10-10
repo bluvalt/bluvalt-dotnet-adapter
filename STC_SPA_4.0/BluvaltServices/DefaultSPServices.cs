@@ -7,6 +7,7 @@ using System.IO;
 using Newtonsoft.Json;
 using System.Configuration;
 using System.Net;
+using Authentication;
 
 namespace STCS_SPA2.Services
 {
@@ -15,6 +16,8 @@ namespace STCS_SPA2.Services
 
     public class DefaultSPServices : SPServices
     {
+        Config config = new Config();
+
         public void handleEvent(string EventStr)
         {
             Event eventObj = new Event();
@@ -62,11 +65,11 @@ namespace STCS_SPA2.Services
 
                 }
                 eventObj.Data = eventData;
-                System.Diagnostics.Debug.WriteLine("event Type recieved:" + eventObj.Type);
+                config.LogError("event Type recieved:" + eventObj.Type);
 
             } catch(Exception ex) 
             {
-                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+                config.LogError(ex.StackTrace.ToString());
                 throw new Exception("Error while understanding Event Json.");
             }
             }
@@ -79,10 +82,10 @@ namespace STCS_SPA2.Services
             String ref_number = (String)args[3];
             if(sendEventReponse( event_id,  status,  message, ref_number))
             {
-                System.Diagnostics.Debug.WriteLine("Responded successfully to event:" + event_id);
+                config.LogError("Responded successfully to event:" + event_id);
             } else
             {
-                System.Diagnostics.Debug.WriteLine("Failed to respond to event:" + event_id);
+                config.LogError("Failed to respond to event:" + event_id);
             }
         }
 
