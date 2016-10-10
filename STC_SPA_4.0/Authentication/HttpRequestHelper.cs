@@ -1,4 +1,4 @@
-﻿using Newtonsoft.Json;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -112,6 +112,53 @@ namespace Authentication
             return result;
         }
 
+        internal static Boolean PUT(string url, String jsonBody,String access_token)
+        {
+           
+            try
+            {
+                HttpWebRequest httpWebRequest = (HttpWebRequest)WebRequest.Create(url);
+                httpWebRequest.Method = "PUT";
+                httpWebRequest.Timeout = 10000;
+                httpWebRequest.ContentType = "application/json";
+                httpWebRequest.Headers.Add("Authorization", "Bearer " + access_token);
+
+                using (var streamWriter = new StreamWriter(httpWebRequest.GetRequestStream()))
+                {
+                    streamWriter.Write(jsonBody);
+                    streamWriter.Flush();
+                    streamWriter.Close();
+                }
+
+                
+                
+                HttpWebResponse myHttpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
+               
+                if (myHttpWebResponse.StatusCode == HttpStatusCode.OK)
+                {
+                    System.Diagnostics.Debug.WriteLine("\r\nResponse Status Code is OK and StatusDescription is: {0}",
+                                         myHttpWebResponse.StatusDescription);                   
+                    myHttpWebResponse.Close();
+                    return true;
+                } else
+                {
+                    return false;
+                }                 
+               
+            }
+            catch (WebException ex)
+            {
+
+                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+                return false;
+            }
+            catch (Exception ex2)
+            {
+                System.Diagnostics.Debug.WriteLine(ex2.StackTrace);
+            }
+            return false;
+        }
+
         private static Dictionary<string, string> HttpRequestErrorByMessage(string message)
         {
             Dictionary<string, string> dictionary = new Dictionary<string, string>();
@@ -121,4 +168,6 @@ namespace Authentication
             return dictionary;
         }
     }
+
+
 }
