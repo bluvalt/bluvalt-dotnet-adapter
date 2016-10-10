@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using System.Text;
 using System.Web;
 using System.Configuration;
+using System.IO;
+using System.Web.UI;
+
 
 namespace Authentication
 {
@@ -10,6 +13,29 @@ namespace Authentication
    
     public  class Config
     {
+
+        public void LogError(string ex)
+        {
+            string message = string.Format("Time: {0}", DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss tt"));
+            message += Environment.NewLine;
+            message += "-----------------------------------------------------------";
+            message += Environment.NewLine;
+            message += string.Format("Message: {0}", ex);
+            message += Environment.NewLine;
+            message += "-----------------------------------------------------------";
+            message += Environment.NewLine;
+            string path = ConfigurationManager.AppSettings["blvt:LogLocation"];
+
+            //if (!Directory.Exists(path))
+            //{
+            //    Directory.CreateDirectory(path);
+            //}            
+            using (StreamWriter writer = new StreamWriter(path, true))
+            {
+                writer.WriteLine(message);
+                writer.Close();
+            }
+        }
 
         
         public static string BasePath = ConfigurationManager.AppSettings["blvt:Authority"];
@@ -37,7 +63,7 @@ namespace Authentication
         UserInfoError
     }
 
-
+    
 }
 
 
