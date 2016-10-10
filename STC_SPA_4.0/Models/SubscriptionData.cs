@@ -1,4 +1,5 @@
-﻿using System;
+using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 
 namespace com.stcs.spa.vo
@@ -13,7 +14,8 @@ namespace com.stcs.spa.vo
 
 		private long? id, base_subscription, override_price, items_price;
 		private string status, cancel_reason, name;
-		private DateTime start, canceled_at, created, end_date;
+        [JsonProperty(NullValueHandling = NullValueHandling.Ignore)]
+        private DateTime start, canceled_at, created, end_date;
 		private Customer customer;
 		private Price price;
 		private Plan plan;
