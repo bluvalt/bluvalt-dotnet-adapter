@@ -36,8 +36,8 @@ namespace STCS_SPA2.Services
                 {
                     case EventType.SUBSCRIPTION_CREATED:
                         eventData = eventDataObj.ToObject<SubscriptionData>();
-                        // add your code here specific to your server and then reply back 
-                        processEvent(eventObj.Id, "success", "done", "ref_number");
+                        // add your code here specific to your server and then reply back async 
+                        // processEvent(eventObj.Id, "success", "done", "ref_number");
                         break;
                     case EventType.SUBSCRIPTION_CANCELED:
                         eventData = eventDataObj.ToObject<SubscriptionData>();
@@ -59,7 +59,8 @@ namespace STCS_SPA2.Services
                     case EventType.SUBSCRIPTION_UPGRADED:
                         break;
                     case EventType.WEBHOOK_TEST:
-                        processEvent(eventObj.Id,"success","done", "ref_number");
+                     // add your code here specific to your server and then reply back async 
+                      //  processEvent(eventObj.Id,"success","done", "ref_number");
                         break;
 
 
