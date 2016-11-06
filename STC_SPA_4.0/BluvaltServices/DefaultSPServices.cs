@@ -60,7 +60,7 @@ namespace STCS_SPA2.Services
                         break;
                     case EventType.WEBHOOK_TEST:
                      // add your code here specific to your server and then reply back async 
-                      //  processEvent(eventObj.Id,"success","done", "ref_number");
+                         new Task(() => { processEvent(eventObj.Id, "success", "done", "ref_number"); }).Start();
                         break;
 
 
