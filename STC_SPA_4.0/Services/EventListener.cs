@@ -29,7 +29,7 @@ namespace Services
             string res = reader.ReadToEnd();
            
             System.ServiceModel.Web.WebOperationContext ctx = System.ServiceModel.Web.WebOperationContext.Current;
-            String XBluvaltSignature = ctx.IncomingRequest.Headers["X-Cartwheel-Signature"].ToString();
+            String XBluvaltSignature = ctx.IncomingRequest.Headers["X-Bluvalt-Signature"].ToString();
             reader.Close();
             reader.Dispose();
             config.LogError(XBluvaltSignature);
