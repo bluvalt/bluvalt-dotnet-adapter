@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 using System.Configuration;
 using System.Net;
 using Authentication;
+using log4net;
 
 namespace STCS_SPA2.Services
 {
@@ -15,8 +16,9 @@ namespace STCS_SPA2.Services
 
 
     public class DefaultSPServices : SPServices
-    {
-        Config config = new Config();
+    {       
+
+        private static readonly ILog log = LogManager.GetLogger(typeof(DefaultSPServices));
 
         public void handleEvent(string EventStr)
         {
@@ -36,8 +38,8 @@ namespace STCS_SPA2.Services
                 {
                     case EventType.SUBSCRIPTION_CREATED:
                         eventData = eventDataObj.ToObject<SubscriptionData>();
-                        // add your code here specific to your server and then reply back async 
-                        // processEvent(eventObj.Id, "success", "done", "ref_number");
+                        // add your code here specific to your server and then reply back 
+                        processEvent(eventObj.Id, "success", "done", "ref_number");
                         break;
                     case EventType.SUBSCRIPTION_CANCELED:
                         eventData = eventDataObj.ToObject<SubscriptionData>();
@@ -59,18 +61,18 @@ namespace STCS_SPA2.Services
                     case EventType.SUBSCRIPTION_UPGRADED:
                         break;
                     case EventType.WEBHOOK_TEST:
-                     // add your code here specific to your server and then reply back async 
-                         new Task(() => { processEvent(eventObj.Id, "success", "done", "ref_number"); }).Start();
+                        log.Info("WebHook Test....Process Event Started");
+                        processEvent(eventObj.Id,"success","done", "ref_number");
                         break;
 
 
                 }
                 eventObj.Data = eventData;
-                config.LogError("event Type recieved:" + eventObj.Type);
+                log.Info("event Type recieved:" + eventObj.Type);
 
             } catch(Exception ex) 
             {
-                config.LogError(ex.StackTrace.ToString());
+                log.Error(ex.StackTrace.ToString());
                 throw new Exception("Error while understanding Event Json.");
             }
             }
@@ -83,10 +85,10 @@ namespace STCS_SPA2.Services
             String ref_number = (String)args[3];
             if(sendEventReponse( event_id,  status,  message, ref_number))
             {
-                config.LogError("Responded successfully to event:" + event_id);
+                log.Info("Responded successfully to event:" + event_id);
             } else
             {
-                config.LogError("Failed to respond to event:" + event_id);
+                log.Error("Failed to respond to event:" + event_id);
             }
         }
 

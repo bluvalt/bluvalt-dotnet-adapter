@@ -7,6 +7,7 @@ using System.ServiceModel.Web;
 using System.Text;
 using System.IO;
 using Authentication;
+using log4net;
 
 namespace Services
 {
@@ -17,7 +18,7 @@ namespace Services
     // NOTE: If the service is renamed, remember to update the global.asax.cs file
     public class CallBack
     {
-        
+        private static readonly ILog log = LogManager.GetLogger(typeof(CallBack));
 
         [WebGet(UriTemplate = "")]
         public Dictionary<string, string> CallBackReciever()
@@ -29,7 +30,7 @@ namespace Services
                 oidc.GetUserInfo(code);
                 if (oidc.userInfo != null)
                 {
-                    System.Diagnostics.Debug.Print("Clicked................." + oidc.userInfo["name"]);
+                    log.Info("Clicked................." + oidc.userInfo["name"]);
                     // validate user here and create session to login.
                 }
                 else

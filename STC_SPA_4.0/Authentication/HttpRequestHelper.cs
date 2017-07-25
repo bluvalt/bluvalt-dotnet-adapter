@@ -1,3 +1,4 @@
+using log4net;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,8 @@ namespace Authentication
 {
     internal class HttpRequestHelper
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(HttpRequestHelper));
+
         internal static Dictionary<string, string> Post(string url, List<KeyValuePair<string, string>> queryParams)
         {
             Dictionary<string, string> result;
@@ -135,9 +138,8 @@ namespace Authentication
                 HttpWebResponse myHttpWebResponse = (HttpWebResponse)httpWebRequest.GetResponse();
                
                 if (myHttpWebResponse.StatusCode == HttpStatusCode.OK)
-                {
-                    System.Diagnostics.Debug.WriteLine("\r\nResponse Status Code is OK and StatusDescription is: {0}",
-                                         myHttpWebResponse.StatusDescription);                   
+                {   
+                    log.Info(string.Format("Response Status Code is OK and StatusDescription is: {0}", myHttpWebResponse.StatusDescription.ToString()));
                     myHttpWebResponse.Close();
                     return true;
                 } else
@@ -149,12 +151,12 @@ namespace Authentication
             catch (WebException ex)
             {
 
-                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+                log.Error(ex.StackTrace);
                 return false;
             }
             catch (Exception ex2)
             {
-                System.Diagnostics.Debug.WriteLine(ex2.StackTrace);
+                log.Error(ex2.StackTrace);
             }
             return false;
         }

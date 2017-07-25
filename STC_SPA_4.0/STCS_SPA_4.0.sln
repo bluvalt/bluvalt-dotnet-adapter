@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "STCS_SPA_4.0", "STCS_SPA_4.0.csproj", "{BEC55BE1-1CEE-4B09-B684-A42533BE2500}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BEC55BE1-1CEE-4B09-B684-A42533BE2500}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BEC55BE1-1CEE-4B09-B684-A42533BE2500}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BEC55BE1-1CEE-4B09-B684-A42533BE2500}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BEC55BE1-1CEE-4B09-B684-A42533BE2500}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

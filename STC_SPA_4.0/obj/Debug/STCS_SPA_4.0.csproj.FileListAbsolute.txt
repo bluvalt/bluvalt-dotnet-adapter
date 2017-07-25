@@ -18,3 +18,17 @@ C:\opt\dotnetGitHub\STC_SPA_4.0\bin\STCS_SPA_4.0.dll
 C:\opt\dotnetGitHub\STC_SPA_4.0\bin\STCS_SPA_4.0.pdb
 C:\opt\dotnetGitHub\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.dll
 C:\opt\dotnetGitHub\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.pdb
+E:\Web\STC_SPA_4.0\bin\STCS_SPA_4.0.dll
+E:\Web\STC_SPA_4.0\bin\STCS_SPA_4.0.pdb
+E:\Web\STC_SPA_4.0\bin\Newtonsoft.Json.dll
+E:\Web\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.csprojResolveAssemblyReference.cache
+E:\Web\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.dll
+E:\Web\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.pdb
+E:\Web\STC_SPA_4.0\STC_SPA_4.0\bin\STCS_SPA_4.0.dll
+E:\Web\STC_SPA_4.0\STC_SPA_4.0\bin\STCS_SPA_4.0.pdb
+E:\Web\STC_SPA_4.0\STC_SPA_4.0\bin\log4net.dll
+E:\Web\STC_SPA_4.0\STC_SPA_4.0\bin\Newtonsoft.Json.dll
+E:\Web\STC_SPA_4.0\STC_SPA_4.0\bin\log4net.xml
+E:\Web\STC_SPA_4.0\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.dll
+E:\Web\STC_SPA_4.0\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.pdb
+E:\Web\STC_SPA_4.0\STC_SPA_4.0\obj\Debug\STCS_SPA_4.0.csprojResolveAssemblyReference.cache

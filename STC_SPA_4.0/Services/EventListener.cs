@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.ServiceModel;
@@ -8,7 +8,7 @@ using System.Text;
 using System.IO;
 using STCS_SPA2.Services;
 using Authentication;
-
+using log4net;
 
 namespace Services
 {
@@ -19,41 +19,39 @@ namespace Services
    
     public class EventListener
     {
-        Config config = new Config();        
+        private static readonly ILog log = LogManager.GetLogger(typeof(EventListener));
 
         [WebInvoke(UriTemplate = "", Method = "POST")]
         public string Create(Stream streamdata)
-        {
-            config.LogError("Testing");            
+        {                     
             StreamReader reader = new StreamReader(streamdata);
-            string res = reader.ReadToEnd();
-           
+            string res = reader.ReadToEnd();            
+
+
             System.ServiceModel.Web.WebOperationContext ctx = System.ServiceModel.Web.WebOperationContext.Current;
-            String XBluvaltSignature = ctx.IncomingRequest.Headers["X-Bluvalt-Signature"].ToString();
+            String XBluvaltSignature = ctx.IncomingRequest.Headers["X-Cartwheel-Signature"].ToString();
             reader.Close();
             reader.Dispose();
-            config.LogError(XBluvaltSignature);
+            log.Info(XBluvaltSignature);
             if (XBluvaltSignature != null)
             {
                 try
                 {
                     SPServices spServices = new DefaultSPServices();
-                    spServices.handleEvent(res);
-                    config.LogError(res);
-                    
+                    spServices.handleEvent(res);                    
+                    log.Info(res);
                     return "success";
                 }
                 catch (Exception ex)
-                {
-                    config.LogError(ex.Message.ToString());
+                {                    
                     // Try and handle malformed POST body
-
+                    log.Error(ex.Message.ToString());
                     return "Error";
                 }
             }
             else
-            {
-                config.LogError("Error Logged");
+            {                
+                log.Error("Error Logged");
                 return "Error";
             }
          
