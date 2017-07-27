@@ -9,6 +9,8 @@ using System.Configuration;
 using System.Net;
 using Authentication;
 using log4net;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace STCS_SPA2.Services
 {
@@ -60,9 +62,8 @@ namespace STCS_SPA2.Services
                         break;
                     case EventType.SUBSCRIPTION_UPGRADED:
                         break;
-                    case EventType.WEBHOOK_TEST:
-                        log.Info("WebHook Test....Process Event Started");
-                        processEvent(eventObj.Id,"success","done", "ref_number");
+                    case EventType.WEBHOOK_TEST:                           
+                        new Task(() => { processEvent(eventObj.Id, "success", "done", "ref_number"); }).Start();
                         break;
 
 
@@ -79,6 +80,9 @@ namespace STCS_SPA2.Services
 
         public void processEvent(params string[] args)
         {
+            log.Info("WebHook Test....Process Event Started");
+            log.Info("Giving a Delay of 30 second.");
+            Thread.Sleep(30000);
             String event_id = (String)args[0];
             String status = (String)args[1];
             String message = (String)args[2];
@@ -149,25 +153,36 @@ namespace STCS_SPA2.Services
         public static Boolean sendEventReponse(string event_id, string status, string message, string ref_number)
         {
 
+            try
+            {
+                List<KeyValuePair<string, string>> list = new List<KeyValuePair<string, string>>();
+                list.Add(new KeyValuePair<string, string>("client_id", Authentication.Config.ClientName));
+                list.Add(new KeyValuePair<string, string>("client_secret", Authentication.Config.Credentials));
+                list.Add(new KeyValuePair<string, string>("grant_type", "client_credentials"));
+                var returnData = Authentication.HttpRequestHelper.Post(Authentication.Config.TokenPath, list);
+                
+
+                EventResponse eventresp = new EventResponse();
+                eventresp.Status = status;
+                eventresp.Message = message;
+                eventresp.Ref_number = ref_number;
+                string URL = (Authentication.Config.EventReponseURL + event_id + "/");            
+                string Token = returnData["access_token"].ToString();
 
 
-            List<KeyValuePair<string, string>> list = new List<KeyValuePair<string, string>>();
-            list.Add(new KeyValuePair<string, string>("client_id", Authentication.Config.ClientName));
-            list.Add(new KeyValuePair<string, string>("client_secret", Authentication.Config.Credentials));
-            list.Add(new KeyValuePair<string, string>("grant_type", "client_credentials"));
-            var returnData = Authentication.HttpRequestHelper.Post(Authentication.Config.TokenPath, list);
 
-            EventResponse eventresp = new EventResponse();
-            eventresp.Status = status;
-            eventresp.Message = message;
-            eventresp.Ref_number = ref_number;
-            string URL = (Authentication.Config.EventReponseURL + event_id + "/");
-            string Token = returnData["access_token"].ToString();
+                string json = "{\"status\":\"" + status + "\",\"message\":\"" + message + "\",\"ref_number\":\"" + ref_number + "\"}";
 
+                return Authentication.HttpRequestHelper.PUT(URL, json, Token);
 
-            string json = "{\"status\":\"" + status + "\",\"message\":\"" + message + "\",\"ref_number\":\"" + ref_number + "\"}";
-
-            return Authentication.HttpRequestHelper.PUT(URL, json, Token);
+            }
+            catch(Exception ex)
+            {
+                log.Error(ex.StackTrace);
+                log.Debug(ex.StackTrace);
+            }
+            return false;
+            
 
 
 
